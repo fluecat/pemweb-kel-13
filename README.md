@@ -23,7 +23,7 @@ air-biru/
 
 ## Penjelasan Halaman
 
-### 1. index.html (Halaman Beranda)
+### 1. index.html (Halaman Beranda) - Lutfia Nur Sabrina
 Halaman utama yang pertama kali dilihat pengunjung saat membuka situs Air Biru.
 
 **Isi halaman:**
@@ -41,7 +41,7 @@ Halaman utama yang pertama kali dilihat pengunjung saat membuka situs Air Biru.
 
 ---
 
-### 2. about.html (Halaman Profil)
+### 2. about.html (Halaman Profil) - Gratia Novia Tamba
 Halaman yang menjelaskan latar belakang usaha Air Biru kepada pengunjung.
 
 **Isi halaman:**
@@ -58,7 +58,7 @@ Halaman yang menjelaskan latar belakang usaha Air Biru kepada pengunjung.
 
 ---
 
-### 3. order.html (Halaman Pemesanan)
+### 3. order.html (Halaman Pemesanan) - Michelle Evelyn Dyvani
 Halaman utama untuk melakukan pemesanan air galon.
 
 **Isi halaman:**
@@ -77,7 +77,7 @@ Halaman utama untuk melakukan pemesanan air galon.
 
 ---
 
-### 4. report.html (Halaman Laporan Masalah)
+### 4. report.html (Halaman Laporan Masalah) - Novia Farah Harwati
 Halaman untuk pelanggan menyampaikan keluhan atau laporan terkait layanan Air Biru.
 
 **Isi halaman:**
