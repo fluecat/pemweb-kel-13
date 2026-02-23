@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laporan Masalah - Air Biru">
+  <title>Laporan Masalah - Air Biru</title>
+</head>
+<body bgcolor="#e8f4f8">
+
+  <!-- HEADER -->
+  <table width="100%" bgcolor="#0a2463" cellpadding="16" cellspacing="0">
+    <tr>
+      <td>
+        <font color="white" size="6"><b>💧 AirBiru</b></font><br>
+        <font color="#34b4c8" size="2">Pemesanan Air Galon Terpercaya</font>
+      </td>
+      <td align="right">
+        <a href="index.html"><font color="white">Beranda</font></a> &nbsp;|&nbsp;
+        <a href="about.html"><font color="white">Tentang</font></a> &nbsp;|&nbsp;
+        <a href="order.html"><font color="white">Pesan Galon</font></a> &nbsp;|&nbsp;
+        <a href="report.html"><font color="white"><b>Laporan</b></font></a>
+      </td>
+    </tr>
+  </table>
+
+  <!-- HERO -->
+  <table width="100%" bgcolor="#0a2463" cellpadding="40" cellspacing="0">
+    <tr>
+      <td align="center">
+        <font color="#a8dadc" size="2">&#128233; Pusat Laporan Masalah</font><br><br>
+        <font color="white" size="6"><b>Sampaikan Kendalamu<br>kepada Kami</b></font><br><br>
+        <font color="#a8dadc" size="3">Kami berkomitmen untuk terus meningkatkan kualitas layanan.<br>Setiap laporan Anda sangat berarti.</font>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- KATEGORI -->
+  <table width="90%" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><font size="5" color="#0a2463"><b>&#127991; Kategori Masalah</b></font></td>
+    </tr>
+  </table>
+  <hr color="#34b4c8" width="90%">
+
+  <table width="90%" align="center" bgcolor="white" cellpadding="20" cellspacing="0">
+    <tr>
+      <td>
+        <font size="3" color="#4a5568">Pilih kategori yang sesuai untuk mempermudah proses tindak lanjut oleh tim kami:</font>
+        <br><br>
+        <table cellpadding="6" cellspacing="6">
+          <tr>
+            <td bgcolor="#0a2463"><font color="white" size="2"><b>Semua</b></font></td>
+            <td bgcolor="#e8f4f8"><font color="#4a5568" size="2">&#128336; Keterlambatan</font></td>
+            <td bgcolor="#e8f4f8"><font color="#4a5568" size="2">&#128167; Kualitas Air</font></td>
+            <td bgcolor="#e8f4f8"><font color="#4a5568" size="2">&#129371; Kondisi Galon</font></td>
+            <td bgcolor="#e8f4f8"><font color="#4a5568" size="2">&#128230; Salah Pesanan</font></td>
+            <td bgcolor="#e8f4f8"><font color="#4a5568" size="2">&#128100; Pelayanan Kurir</font></td>
+            <td bgcolor="#e8f4f8"><font color="#4a5568" size="2">&#10067; Lainnya</font></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- FORM LAPORAN -->
+  <table width="90%" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><font size="5" color="#0a2463"><b>&#128221; Form Laporan</b></font></td>
+    </tr>
+  </table>
+  <hr color="#34b4c8" width="90%">
+
+  <table width="90%" align="center" bgcolor="white" cellpadding="24" cellspacing="0">
+    <tr>
+      <td>
+        <form action="#" method="POST">
+
+          <table width="100%" cellpadding="6" cellspacing="0">
+            <tr>
+              <td width="50%">
+                <font size="2" color="#0a2463"><b>Nama Lengkap</b></font><br>
+                <input type="text" name="nama" placeholder="Contoh: Siti Rahayu" size="35" required>
+              </td>
+              <td width="50%">
+                <font size="2" color="#0a2463"><b>Email</b></font><br>
+                <input type="email" name="email" placeholder="email@contoh.com" size="35" required>
+              </td>
+            </tr>
+          </table>
+
+          <br>
+          <font size="2" color="#0a2463"><b>Nomor Pesanan (opsional)</b></font><br>
+          <input type="text" name="nomor_pesanan" placeholder="Contoh: #AB-001" size="40">
+
+          <br><br>
+          <font size="2" color="#0a2463"><b>Kategori Masalah</b></font><br>
+          <select name="kategori" required>
+            <option value="">-- Pilih Kategori --</option>
+            <option value="keterlambatan">&#128336; Keterlambatan Pengiriman</option>
+            <option value="kualitas_air">&#128167; Kualitas Air</option>
+            <option value="kondisi_galon">&#129371; Kondisi Galon</option>
+            <option value="salah_pesanan">&#128230; Kesalahan Pesanan</option>
+            <option value="pelayanan_kurir">&#128100; Pelayanan Kurir</option>
+            <option value="lainnya">&#10067; Lainnya</option>
+          </select>
+
+          <br><br>
+          <font size="2" color="#0a2463"><b>Deskripsi Masalah</b></font><br>
+          <textarea name="deskripsi" rows="5" cols="72" placeholder="Ceritakan masalah yang Anda alami secara detail agar kami dapat menindaklanjuti dengan tepat..." required></textarea>
+
+          <br><br>
+          <font size="2" color="#0a2463"><b>Lampirkan Foto (opsional)</b></font><br>
+          <input type="file" name="foto" accept="image/*">
+
+          <br><br>
+          <input type="submit" value="Kirim Laporan">
+          &nbsp;
+          <input type="reset" value="Reset Form">
+
+        </form>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- RIWAYAT LAPORAN -->
+  <table width="90%" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><font size="5" color="#0a2463"><b>&#128203; Riwayat Laporan Anda</b></font></td>
+    </tr>
+  </table>
+  <hr color="#34b4c8" width="90%">
+
+  <table width="90%" align="center" border="1" cellpadding="12" cellspacing="0" bgcolor="white">
+    <tr bgcolor="#0a2463">
+      <th><font color="white">ID Laporan</font></th>
+      <th><font color="white">Kategori</font></th>
+      <th><font color="white">Tanggal</font></th>
+      <th><font color="white">Status</font></th>
+    </tr>
+    <tr>
+      <td><b>#RPT-001</b></td>
+      <td>&#128336; Keterlambatan Pengiriman</td>
+      <td>10 Feb 2026</td>
+      <td><font color="green"><b>&#9679; Selesai</b></font></td>
+    </tr>
+    <tr bgcolor="#e8f4f8">
+      <td><b>#RPT-002</b></td>
+      <td>&#128167; Kualitas Air</td>
+      <td>19 Feb 2026</td>
+      <td><font color="orange"><b>&#9679; Diproses</b></font></td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- FOOTER -->
+  <table width="100%" bgcolor="#0a2463" cellpadding="16" cellspacing="0">
+    <tr>
+      <td align="center">
+        <font color="#a8dadc" size="2">&copy; 2026 <b>Air Biru</b>. Semua hak dilindungi. Dibuat dengan 💙 untuk kesehatan Anda.</font>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
