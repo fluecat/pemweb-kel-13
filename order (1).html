@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan Galon — Air Biru</title>
+
+  <style>
+    /* ============================================
+       AIR BIRU — order.html
+       Semua style ditulis di dalam tag <style>
+       tanpa file CSS eksternal
+    ============================================ */
+
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+    :root {
+      --ocean:      #0a2463;
+      --sea:        #1e6091;
+      --sky:        #168aad;
+      --aqua:       #34b4c8;
+      --foam:       #a8dadc;
+      --mist:       #e8f4f8;
+      --white:      #ffffff;
+      --ink:        #0d1b2a;
+      --slate:      #4a5568;
+      --radius-sm:  8px;
+      --radius-md:  16px;
+      --radius-lg:  24px;
+      --radius-xl:  40px;
+      --shadow-sm:  0 2px 8px rgba(10,36,99,0.08);
+      --shadow-md:  0 8px 32px rgba(10,36,99,0.12);
+      --shadow-lg:  0 20px 60px rgba(10,36,99,0.18);
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--mist);
+      color: var(--ink); line-height: 1.65; overflow-x: hidden;
+    }
+
+    body::before {
+      content: ''; position: fixed; top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(22,138,173,0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(10,36,99,0.05) 0%, transparent 50%);
+      z-index: -1; animation: bgFloat 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgFloat {
+      from { transform: translate(0,0) rotate(0deg); }
+      to   { transform: translate(3%,3%) rotate(2deg); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp 0.6s var(--transition) both; }
+    .fade-up:nth-child(1) { animation-delay: 0.05s; }
+    .fade-up:nth-child(2) { animation-delay: 0.15s; }
+    .fade-up:nth-child(3) { animation-delay: 0.25s; }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,36,99,0.96);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.08), var(--shadow-md);
+    }
+
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--aqua), var(--sky));
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; box-shadow: 0 4px 14px rgba(52,180,200,0.4);
+    }
+
+    .logo-text { font-size: 1.3rem; font-weight: 800; color: var(--white); letter-spacing: 0.5px; }
+    .logo-text span { color: var(--aqua); }
+
+    nav ul { list-style: none; display: flex; gap: 4px; }
+
+    nav ul li a {
+      display: block; color: rgba(255,255,255,0.75);
+      text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      padding: 8px 16px; border-radius: var(--radius-sm);
+      transition: var(--transition); letter-spacing: 0.3px;
+    }
+
+    nav ul li a:hover { color: var(--white); background: rgba(255,255,255,0.1); }
+
+    nav ul li a.active {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--sky), var(--aqua));
+      box-shadow: 0 4px 14px rgba(52,180,200,0.35);
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--ocean) 0%, var(--sea) 50%, var(--sky) 100%);
+      color: var(--white); padding: 50px 40px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='rgba(255,255,255,0.04)' d='M0,100 C360,160 720,40 1440,100 L1440,200 L0,200 Z'/%3E%3C/svg%3E") bottom/cover no-repeat,
+        radial-gradient(ellipse at 70% 40%, rgba(52,180,200,0.2) 0%, transparent 60%);
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px; padding: 6px 18px;
+      font-size: 0.82rem; font-weight: 500;
+      margin-bottom: 20px; letter-spacing: 0.5px; backdrop-filter: blur(8px);
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      line-height: 1.2; margin-bottom: 12px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+
+    .hero p { font-size: 1rem; opacity: 0.88; font-weight: 300; }
+
+    /* MAIN */
+    main { max-width: 1000px; margin: 0 auto; padding: 48px 24px 64px; }
+
+    /* SECTION */
+    section {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 36px; margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(168,218,220,0.3);
+      transition: box-shadow var(--transition);
+      animation: fadeUp 0.5s both;
+    }
+
+    section:hover { box-shadow: var(--shadow-md); }
+
+    section h2 {
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--ocean); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    section h2::after {
+      content: ''; flex: 1; height: 2px;
+      background: linear-gradient(90deg, var(--foam), transparent); border-radius: 2px;
+    }
+
+    section p { color: var(--slate); font-size: 0.97rem; }
+
+    /* PRODUCT CARD */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .product-card {
+      background: var(--white); border: 2px solid var(--foam);
+      border-radius: var(--radius-md); padding: 28px 24px;
+      text-align: center; transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+
+    .product-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--sky), var(--aqua));
+      border-radius: 4px 4px 0 0;
+    }
+
+    .product-card:hover {
+      border-color: var(--aqua);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .img-placeholder {
+      width: 100%; height: 160px;
+      background: linear-gradient(135deg, var(--mist), rgba(52,180,200,0.15));
+      border-radius: var(--radius-sm); margin-bottom: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem;
+    }
+
+    .product-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--ocean); margin-bottom: 6px; }
+
+    .product-card p { font-size: 0.88rem; color: var(--slate); margin-bottom: 14px; line-height: 1.5; }
+
+    .product-price { font-size: 1.4rem; font-weight: 800; color: var(--sky); margin-bottom: 16px; display: block; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: var(--radius-xl);
+      font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; border: none;
+      transition: var(--transition); letter-spacing: 0.3px; white-space: nowrap;
+    }
+
+    .btn-ocean {
+      background: linear-gradient(135deg, var(--ocean), var(--sea));
+      color: var(--white); box-shadow: 0 4px 18px rgba(10,36,99,0.3);
+      width: 100%; justify-content: center;
+    }
+
+    .btn-ocean:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(10,36,99,0.4); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--sky), var(--aqua));
+      color: var(--white); box-shadow: 0 4px 18px rgba(52,180,200,0.4);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(52,180,200,0.5); }
+
+    .btn-full { width: 100%; justify-content: center; margin-top: 24px; padding: 14px 28px; font-size: 1rem; }
+
+    /* FORMS */
+    .form-group { margin-bottom: 20px; }
+
+    .form-group label {
+      display: block; font-size: 0.88rem; font-weight: 600;
+      color: var(--ocean); margin-bottom: 8px; letter-spacing: 0.3px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 12px 16px;
+      font-family: 'Outfit', sans-serif; font-size: 0.95rem;
+      background: var(--mist); border: 1.5px solid var(--foam);
+      border-radius: var(--radius-sm); color: var(--ink);
+      transition: var(--transition); outline: none; appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--sky); background: var(--white);
+      box-shadow: 0 0 0 4px rgba(52,180,200,0.12);
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23168aad'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; background-size: 18px;
+      padding-right: 44px;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* INFO GRID */
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+
+    .info-item {
+      background: var(--mist); border-radius: var(--radius-sm);
+      padding: 18px 16px; border-left: 4px solid var(--aqua);
+    }
+
+    .info-label { font-size: 0.8rem; color: var(--slate); margin-bottom: 4px; font-weight: 500; }
+    .info-value { font-size: 1rem; font-weight: 700; color: var(--ocean); }
+
+    /* FOOTER */
+    footer {
+      background: var(--ocean); color: rgba(255,255,255,0.6);
+      text-align: center; padding: 28px 24px;
+      font-size: 0.88rem; position: relative; overflow: hidden;
+    }
+
+    footer::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--sky), var(--aqua), var(--sky));
+    }
+
+    footer strong { color: var(--aqua); }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--mist); }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--sky), var(--aqua)); border-radius: 4px; }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+      .logo-text { display: none; }
+      nav ul { gap: 2px; }
+      nav ul li a { padding: 7px 10px; font-size: 0.82rem; }
+      .hero { padding: 40px 20px; }
+      main { padding: 32px 16px 48px; }
+      section { padding: 24px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <div class="logo-icon">💧</div>
+      <span class="logo-text">Air<span>Biru</span></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="order.html" class="active">Pesan Galon</a></li>
+        <li><a href="report.html">Laporan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🛒 Form Pemesanan Galon</div>
+      <h2>Pilih & Pesan Galon Air Biru</h2>
+      <p>Isi form di bawah dan pesanan Anda akan diproses dari depot terdekat secara otomatis.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="fade-up">
+      <h2>🧴 Pilih Produk Galon</h2>
+      <div class="card-grid">
+        <div class="product-card">
+          <div class="img-placeholder">🫙</div>
+          <h3>Galon 19 Liter</h3>
+          <p>Cocok untuk kebutuhan rumah tangga dan kantor. Kapasitas besar, harga hemat.</p>
+          <span class="product-price">Rp 20.000</span>
+          <a href="#form-pesanan" class="btn btn-ocean">Pilih Ini</a>
+        </div>
+        <div class="product-card">
+          <div class="img-placeholder">🫧</div>
+          <h3>Galon 5 Liter</h3>
+          <p>Praktis untuk kebutuhan personal atau perjalanan. Ringan dan mudah dibawa.</p>
+          <span class="product-price">Rp 8.000</span>
+          <a href="#form-pesanan" class="btn btn-ocean">Pilih Ini</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-up" id="form-pesanan">
+      <h2>📋 Form Pemesanan</h2>
+      <form action="#" method="POST">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" required>
+          </div>
+          <div class="form-group">
+            <label for="telepon">Nomor Telepon</label>
+            <input type="tel" id="telepon" name="telepon" placeholder="08123456789" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="alamat">Alamat Pengiriman</label>
+          <textarea id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat lengkap termasuk RT/RW, kelurahan, kecamatan..." required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="produk">Pilih Produk</label>
+            <select id="produk" name="produk" required>
+              <option value="">-- Pilih Produk --</option>
+              <option value="galon19">Galon 19 Liter — Rp 20.000</option>
+              <option value="galon5">Galon 5 Liter — Rp 8.000</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="jumlah">Jumlah (unit)</label>
+            <input type="number" id="jumlah" name="jumlah" min="1" max="20" value="1" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="jadwal">Jadwal Pengiriman</label>
+          <select id="jadwal" name="jadwal">
+            <option value="sekarang">⚡ Sekarang (estimasi 1–2 jam)</option>
+            <option value="besok">📅 Besok</option>
+            <option value="mingguan">🔄 Langganan Mingguan</option>
+            <option value="2minggu">🔄 Langganan 2 Minggu Sekali</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="catatan">Catatan Tambahan (opsional)</label>
+          <textarea id="catatan" name="catatan" rows="2" placeholder="Contoh: taruh di depan pagar, hubungi terlebih dahulu..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">🛒 Pesan Sekarang</button>
+      </form>
+    </section>
+
+    <section class="fade-up">
+      <h2>⏱️ Estimasi Pengiriman</h2>
+      <p style="margin-bottom: 18px;">Pesanan Anda akan diteruskan ke <strong>depot Air Biru terdekat</strong> dari alamat yang dimasukkan secara otomatis.</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Dalam Kota</div>
+          <div class="info-value">1 – 2 Jam</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Luar Kota</div>
+          <div class="info-value">1 Hari Kerja</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Langganan Rutin</div>
+          <div class="info-value">Sesuai Jadwal</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <strong>Air Biru</strong>. Semua hak dilindungi. Dibuat dengan 💙 untuk kesehatan Anda.</p>
+  </footer>
+
+</body>
+</html>
