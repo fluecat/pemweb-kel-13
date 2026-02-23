@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pesan Galon - Air Biru">
+  <title>Pesan Galon - Air Biru</title>
+</head>
+<body bgcolor="#e8f4f8">
+
+  <!-- HEADER -->
+  <table width="100%" bgcolor="#0a2463" cellpadding="16" cellspacing="0">
+    <tr>
+      <td>
+        <font color="white" size="6"><b>💧 AirBiru</b></font><br>
+        <font color="#34b4c8" size="2">Pemesanan Air Galon Terpercaya</font>
+      </td>
+      <td align="right">
+        <a href="index.html"><font color="white">Beranda</font></a> &nbsp;|&nbsp;
+        <a href="about.html"><font color="white">Tentang</font></a> &nbsp;|&nbsp;
+        <a href="order.html"><font color="white"><b>Pesan Galon</b></font></a> &nbsp;|&nbsp;
+        <a href="report.html"><font color="white">Laporan</font></a>
+      </td>
+    </tr>
+  </table>
+
+  <!-- HERO -->
+  <table width="100%" bgcolor="#0a2463" cellpadding="40" cellspacing="0">
+    <tr>
+      <td align="center">
+        <font color="#a8dadc" size="2">&#128722; Form Pemesanan Galon</font><br><br>
+        <font color="white" size="6"><b>Pilih &amp; Pesan Galon Air Biru</b></font><br><br>
+        <font color="#a8dadc" size="3">Isi form di bawah dan pesanan Anda akan diproses dari depot terdekat secara otomatis.</font>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- PILIH PRODUK -->
+  <table width="90%" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><font size="5" color="#0a2463"><b>&#129404; Pilih Produk Galon</b></font></td>
+    </tr>
+  </table>
+  <hr color="#34b4c8" width="90%">
+
+  <table width="90%" align="center" cellpadding="16" cellspacing="12">
+    <tr>
+      <td width="50%" bgcolor="white" align="center" valign="top">
+        <table width="100%" cellpadding="16" cellspacing="0">
+          <tr><td bgcolor="#e8f4f8" align="center"><font size="6">&#129371;</font></td></tr>
+          <tr><td align="center">
+            <font size="4" color="#0a2463"><b>Galon 19 Liter</b></font><br>
+            <font size="2" color="#4a5568">Cocok untuk kebutuhan rumah tangga dan kantor. Kapasitas besar, harga hemat.</font><br><br>
+            <font size="5" color="#168aad"><b>Rp 20.000</b></font><br><br>
+            <a href="#form-pesanan"><font color="#0a2463"><b>&darr; Pilih Ini</b></font></a>
+          </td></tr>
+        </table>
+      </td>
+      <td width="50%" bgcolor="white" align="center" valign="top">
+        <table width="100%" cellpadding="16" cellspacing="0">
+          <tr><td bgcolor="#e8f4f8" align="center"><font size="6">&#129383;</font></td></tr>
+          <tr><td align="center">
+            <font size="4" color="#0a2463"><b>Galon 5 Liter</b></font><br>
+            <font size="2" color="#4a5568">Praktis untuk kebutuhan personal atau perjalanan. Ringan dan mudah dibawa.</font><br><br>
+            <font size="5" color="#168aad"><b>Rp 8.000</b></font><br><br>
+            <a href="#form-pesanan"><font color="#0a2463"><b>&darr; Pilih Ini</b></font></a>
+          </td></tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- FORM PESANAN -->
+  <table width="90%" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><a name="form-pesanan"></a><font size="5" color="#0a2463"><b>&#128203; Form Pemesanan</b></font></td>
+    </tr>
+  </table>
+  <hr color="#34b4c8" width="90%">
+
+  <table width="90%" align="center" bgcolor="white" cellpadding="24" cellspacing="0">
+    <tr>
+      <td>
+        <form action="#" method="POST">
+
+          <table width="100%" cellpadding="6" cellspacing="0">
+            <tr>
+              <td width="50%">
+                <font size="2" color="#0a2463"><b>Nama Lengkap</b></font><br>
+                <input type="text" name="nama" placeholder="Contoh: Budi Santoso" size="35" required>
+              </td>
+              <td width="50%">
+                <font size="2" color="#0a2463"><b>Nomor Telepon</b></font><br>
+                <input type="tel" name="telepon" placeholder="08123456789" size="35" required>
+              </td>
+            </tr>
+          </table>
+
+          <br>
+          <font size="2" color="#0a2463"><b>Alamat Pengiriman</b></font><br>
+          <textarea name="alamat" rows="3" cols="72" placeholder="Masukkan alamat lengkap termasuk RT/RW, kelurahan, kecamatan..." required></textarea>
+
+          <br><br>
+          <table width="100%" cellpadding="6" cellspacing="0">
+            <tr>
+              <td width="50%">
+                <font size="2" color="#0a2463"><b>Pilih Produk</b></font><br>
+                <select name="produk" required>
+                  <option value="">-- Pilih Produk --</option>
+                  <option value="galon19">Galon 19 Liter &mdash; Rp 20.000</option>
+                  <option value="galon5">Galon 5 Liter &mdash; Rp 8.000</option>
+                </select>
+              </td>
+              <td width="50%">
+                <font size="2" color="#0a2463"><b>Jumlah (unit)</b></font><br>
+                <input type="number" name="jumlah" min="1" max="20" value="1" required>
+              </td>
+            </tr>
+          </table>
+
+          <br>
+          <font size="2" color="#0a2463"><b>Jadwal Pengiriman</b></font><br>
+          <select name="jadwal">
+            <option value="sekarang">&#9889; Sekarang (estimasi 1&ndash;2 jam)</option>
+            <option value="besok">&#128197; Besok</option>
+            <option value="mingguan">&#128260; Langganan Mingguan</option>
+            <option value="2minggu">&#128260; Langganan 2 Minggu Sekali</option>
+          </select>
+
+          <br><br>
+          <font size="2" color="#0a2463"><b>Catatan Tambahan (opsional)</b></font><br>
+          <textarea name="catatan" rows="2" cols="72" placeholder="Contoh: taruh di depan pagar, hubungi terlebih dahulu..."></textarea>
+
+          <br><br>
+          <input type="submit" value="Pesan Sekarang">
+          &nbsp;
+          <input type="reset" value="Reset Form">
+
+        </form>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- ESTIMASI -->
+  <table width="90%" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><font size="5" color="#0a2463"><b>&#9201; Estimasi Pengiriman</b></font></td>
+    </tr>
+  </table>
+  <hr color="#34b4c8" width="90%">
+
+  <table width="90%" align="center" bgcolor="white" cellpadding="20" cellspacing="0">
+    <tr>
+      <td>
+        <font size="3" color="#4a5568">Pesanan Anda akan diteruskan ke <b>depot Air Biru terdekat</b> dari alamat yang dimasukkan secara otomatis.</font>
+        <br><br>
+        <table width="100%" cellpadding="14" cellspacing="8">
+          <tr>
+            <td width="33%" bgcolor="#e8f4f8">
+              <font size="2" color="#4a5568">Dalam Kota</font><br>
+              <font size="3" color="#0a2463"><b>1 &ndash; 2 Jam</b></font>
+            </td>
+            <td width="33%" bgcolor="#e8f4f8">
+              <font size="2" color="#4a5568">Luar Kota</font><br>
+              <font size="3" color="#0a2463"><b>1 Hari Kerja</b></font>
+            </td>
+            <td width="33%" bgcolor="#e8f4f8">
+              <font size="2" color="#4a5568">Langganan Rutin</font><br>
+              <font size="3" color="#0a2463"><b>Sesuai Jadwal</b></font>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- FOOTER -->
+  <table width="100%" bgcolor="#0a2463" cellpadding="16" cellspacing="0">
+    <tr>
+      <td align="center">
+        <font color="#a8dadc" size="2">&copy; 2026 <b>Air Biru</b>. Semua hak dilindungi. Dibuat dengan 💙 untuk kesehatan Anda.</font>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
