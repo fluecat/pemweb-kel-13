@@ -85,64 +85,97 @@
   <table width="90%" align="center" bgcolor="white" cellpadding="24" cellspacing="0">
     <tr>
       <td>
-        <form action="#" method="POST">
+        <font size="4" color="#0a2463" id="judul-form"><b>&#10133; Tambah Pesanan Baru</b></font>
+        <input type="hidden" id="edit-index" value="-1">
+        <br><br>
 
-          <table width="100%" cellpadding="6" cellspacing="0">
-            <tr>
-              <td width="50%">
-                <font size="2" color="#0a2463"><b>Nama Lengkap</b></font><br>
-                <input type="text" name="nama" placeholder="Contoh: Budi Santoso" size="35" required>
-              </td>
-              <td width="50%">
-                <font size="2" color="#0a2463"><b>Nomor Telepon</b></font><br>
-                <input type="tel" name="telepon" placeholder="08123456789" size="35" required>
-              </td>
-            </tr>
-          </table>
+        <table width="100%" cellpadding="6" cellspacing="0">
+          <tr>
+            <td width="50%">
+              <font size="2" color="#0a2463"><b>Nama Lengkap</b></font><br>
+              <input type="text" id="nama" placeholder="Contoh: Budi Santoso" size="35">
+              <div id="err-nama" style="display:none; color:red; font-size:12px;">Nama harus diisi!</div>
+            </td>
+            <td width="50%">
+              <font size="2" color="#0a2463"><b>Nomor Telepon</b></font><br>
+              <input type="tel" id="telepon" placeholder="08123456789" size="35">
+              <div id="err-telepon" style="display:none; color:red; font-size:12px;">Nomor telepon harus diisi!</div>
+            </td>
+          </tr>
+        </table>
 
-          <br>
-          <font size="2" color="#0a2463"><b>Alamat Pengiriman</b></font><br>
-          <textarea name="alamat" rows="3" cols="72" placeholder="Masukkan alamat lengkap termasuk RT/RW, kelurahan, kecamatan..." required></textarea>
+        <br>
+        <font size="2" color="#0a2463"><b>Alamat Pengiriman</b></font><br>
+        <textarea id="alamat" rows="3" cols="72" placeholder="Masukkan alamat lengkap termasuk RT/RW, kelurahan, kecamatan..."></textarea>
+        <div id="err-alamat" style="display:none; color:red; font-size:12px;">Alamat harus diisi!</div>
 
-          <br><br>
-          <table width="100%" cellpadding="6" cellspacing="0">
-            <tr>
-              <td width="50%">
-                <font size="2" color="#0a2463"><b>Pilih Produk</b></font><br>
-                <select name="produk" required>
-                  <option value="">-- Pilih Produk --</option>
-                  <option value="galon19">Galon 19 Liter &mdash; Rp 20.000</option>
-                  <option value="galon5">Galon 5 Liter &mdash; Rp 8.000</option>
-                </select>
-              </td>
-              <td width="50%">
-                <font size="2" color="#0a2463"><b>Jumlah (unit)</b></font><br>
-                <input type="number" name="jumlah" min="1" max="20" value="1" required>
-              </td>
-            </tr>
-          </table>
+        <br><br>
+        <table width="100%" cellpadding="6" cellspacing="0">
+          <tr>
+            <td width="50%">
+              <font size="2" color="#0a2463"><b>Pilih Produk</b></font><br>
+              <select id="produk">
+                <option value="">-- Pilih Produk --</option>
+                <option value="Galon 19 Liter - Rp 20.000">Galon 19 Liter &mdash; Rp 20.000</option>
+                <option value="Galon 5 Liter - Rp 8.000">Galon 5 Liter &mdash; Rp 8.000</option>
+              </select>
+              <div id="err-produk" style="display:none; color:red; font-size:12px;">Produk harus dipilih!</div>
+            </td>
+            <td width="50%">
+              <font size="2" color="#0a2463"><b>Jumlah (unit)</b></font><br>
+              <input type="number" id="jumlah" min="1" max="20" value="1">
+            </td>
+          </tr>
+        </table>
 
-          <br>
-          <font size="2" color="#0a2463"><b>Jadwal Pengiriman</b></font><br>
-          <select name="jadwal">
-            <option value="sekarang">&#9889; Sekarang (estimasi 1&ndash;2 jam)</option>
-            <option value="besok">&#128197; Besok</option>
-            <option value="mingguan">&#128260; Langganan Mingguan</option>
-            <option value="2minggu">&#128260; Langganan 2 Minggu Sekali</option>
-          </select>
+        <br>
+        <font size="2" color="#0a2463"><b>Jadwal Pengiriman</b></font><br>
+        <select id="jadwal">
+          <option value="Sekarang (1-2 jam)">&#9889; Sekarang (estimasi 1&ndash;2 jam)</option>
+          <option value="Besok">&#128197; Besok</option>
+          <option value="Langganan Mingguan">&#128260; Langganan Mingguan</option>
+          <option value="Langganan 2 Minggu Sekali">&#128260; Langganan 2 Minggu Sekali</option>
+        </select>
 
-          <br><br>
-          <font size="2" color="#0a2463"><b>Catatan Tambahan (opsional)</b></font><br>
-          <textarea name="catatan" rows="2" cols="72" placeholder="Contoh: taruh di depan pagar, hubungi terlebih dahulu..."></textarea>
+        <br><br>
+        <font size="2" color="#0a2463"><b>Catatan Tambahan (opsional)</b></font><br>
+        <textarea id="catatan" rows="2" cols="72" placeholder="Contoh: taruh di depan pagar, hubungi terlebih dahulu..."></textarea>
 
-          <br><br>
-          <input type="submit" value="Pesan Sekarang">
-          &nbsp;
-          <input type="reset" value="Reset Form">
-
-        </form>
+        <br><br>
+        <input type="button" value="💾 Simpan Pesanan" onclick="simpanPesanan()">
+        &nbsp;
+        <input type="button" value="🔄 Reset" onclick="resetFormPesanan()">
       </td>
     </tr>
+  </table>
+
+  <br>
+
+  <!-- TABEL RIWAYAT PESANAN (CRUD) -->
+  <table width="90%" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><font size="5" color="#0a2463"><b>&#128230; Riwayat Pesanan</b></font></td>
+    </tr>
+  </table>
+  <hr color="#34b4c8" width="90%">
+
+  <table width="90%" align="center" border="1" cellpadding="12" cellspacing="0" bgcolor="white" id="tabel-pesanan">
+    <tr bgcolor="#0a2463">
+      <th><font color="white">No</font></th>
+      <th><font color="white">Nama</font></th>
+      <th><font color="white">Produk</font></th>
+      <th><font color="white">Jumlah</font></th>
+      <th><font color="white">Jadwal</font></th>
+      <th><font color="white">Telepon</font></th>
+      <th><font color="white">Aksi</font></th>
+    </tr>
+    <tbody id="tabel-body">
+      <tr>
+        <td colspan="7" align="center">
+          <font color="#aaaaaa"><i>Belum ada pesanan. Tambahkan pesanan di atas.</i></font>
+        </td>
+      </tr>
+    </tbody>
   </table>
 
   <br>
@@ -190,6 +223,140 @@
       </td>
     </tr>
   </table>
+
+  <!-- ===================== JAVASCRIPT CRUD ===================== -->
+  <script>
+    var dataPesanan = [];
+
+    // ---- VALIDASI ----
+    function validasi() {
+      var valid = true;
+      var nama    = document.getElementById("nama").value.trim();
+      var telepon = document.getElementById("telepon").value.trim();
+      var alamat  = document.getElementById("alamat").value.trim();
+      var produk  = document.getElementById("produk").value;
+
+      document.getElementById("err-nama").style.display    = "none";
+      document.getElementById("err-telepon").style.display = "none";
+      document.getElementById("err-alamat").style.display  = "none";
+      document.getElementById("err-produk").style.display  = "none";
+
+      if (nama === "") {
+        document.getElementById("err-nama").style.display = "block";
+        valid = false;
+      }
+      if (telepon === "") {
+        document.getElementById("err-telepon").style.display = "block";
+        valid = false;
+      }
+      if (alamat === "") {
+        document.getElementById("err-alamat").style.display = "block";
+        valid = false;
+      }
+      if (produk === "") {
+        document.getElementById("err-produk").style.display = "block";
+        valid = false;
+      }
+      return valid;
+    }
+
+    // ---- CREATE & UPDATE ----
+    function simpanPesanan() {
+      if (!validasi()) return;
+
+      var editIndex = parseInt(document.getElementById("edit-index").value);
+      var data = {
+        nama    : document.getElementById("nama").value.trim(),
+        telepon : document.getElementById("telepon").value.trim(),
+        alamat  : document.getElementById("alamat").value.trim(),
+        produk  : document.getElementById("produk").value,
+        jumlah  : document.getElementById("jumlah").value,
+        jadwal  : document.getElementById("jadwal").value,
+        catatan : document.getElementById("catatan").value.trim()
+      };
+
+      if (editIndex === -1) {
+        dataPesanan.push(data);
+        alert("Pesanan berhasil ditambahkan!");
+      } else {
+        dataPesanan[editIndex] = data;
+        alert("Pesanan berhasil diperbarui!");
+      }
+
+      tampilkanPesanan();
+      resetFormPesanan();
+    }
+
+    // ---- READ ----
+    function tampilkanPesanan() {
+      var tbody = document.getElementById("tabel-body");
+      tbody.innerHTML = "";
+
+      if (dataPesanan.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" align="center"><font color="#aaaaaa"><i>Belum ada pesanan. Tambahkan pesanan di atas.</i></font></td></tr>';
+        return;
+      }
+
+      for (var i = 0; i < dataPesanan.length; i++) {
+        var d = dataPesanan[i];
+        var baris = "<tr" + (i % 2 === 1 ? ' bgcolor="#e8f4f8"' : "") + ">";
+        baris += "<td align='center'><b>" + (i + 1) + "</b></td>";
+        baris += "<td>" + d.nama + "</td>";
+        baris += "<td>" + d.produk + "</td>";
+        baris += "<td align='center'>" + d.jumlah + "</td>";
+        baris += "<td>" + d.jadwal + "</td>";
+        baris += "<td>" + d.telepon + "</td>";
+        baris += "<td align='center'>";
+        baris += "<input type='button' value='✏️ Edit' onclick='editPesanan(" + i + ")'>";
+        baris += " ";
+        baris += "<input type='button' value='🗑️ Hapus' onclick='hapusPesanan(" + i + ")'>";
+        baris += "</td></tr>";
+        tbody.innerHTML += baris;
+      }
+    }
+
+    // ---- UPDATE - load ke form ----
+    function editPesanan(index) {
+      var d = dataPesanan[index];
+      document.getElementById("nama").value    = d.nama;
+      document.getElementById("telepon").value = d.telepon;
+      document.getElementById("alamat").value  = d.alamat;
+      document.getElementById("produk").value  = d.produk;
+      document.getElementById("jumlah").value  = d.jumlah;
+      document.getElementById("jadwal").value  = d.jadwal;
+      document.getElementById("catatan").value = d.catatan;
+      document.getElementById("edit-index").value = index;
+      document.getElementById("judul-form").innerHTML = "<b>✏️ Edit Pesanan</b>";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // ---- DELETE ----
+    function hapusPesanan(index) {
+      var konfirmasi = confirm("Yakin ingin menghapus pesanan atas nama " + dataPesanan[index].nama + "?");
+      if (konfirmasi) {
+        dataPesanan.splice(index, 1);
+        tampilkanPesanan();
+        alert("Pesanan berhasil dihapus!");
+      }
+    }
+
+    // ---- RESET ----
+    function resetFormPesanan() {
+      document.getElementById("nama").value    = "";
+      document.getElementById("telepon").value = "";
+      document.getElementById("alamat").value  = "";
+      document.getElementById("produk").value  = "";
+      document.getElementById("jumlah").value  = "1";
+      document.getElementById("jadwal").value  = "Sekarang (1-2 jam)";
+      document.getElementById("catatan").value = "";
+      document.getElementById("edit-index").value = -1;
+      document.getElementById("judul-form").innerHTML = "<b>&#10133; Tambah Pesanan Baru</b>";
+      document.getElementById("err-nama").style.display    = "none";
+      document.getElementById("err-telepon").style.display = "none";
+      document.getElementById("err-alamat").style.display  = "none";
+      document.getElementById("err-produk").style.display  = "none";
+    }
+  </script>
 
 </body>
 </html>
