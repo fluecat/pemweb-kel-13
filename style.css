@@ -1,0 +1,361 @@
+/* style.css - CSS Kelompok PWD */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4ff;
+    margin: 0;
+    padding: 0;
+}
+
+/* ====== HEADER ====== */
+.header {
+    background-color: #3a86ff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+    background-color: #2667cc;
+    overflow: hidden;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    background-color: #1a4fa0;
+    border-radius: 4px;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* ====== JUDUL SECTION ====== */
+.section-title {
+    text-align: center;
+    color: #3a86ff;
+    margin-bottom: 25px;
+    font-size: 22px;
+    border-bottom: 2px solid #3a86ff;
+    padding-bottom: 8px;
+}
+
+/* ====== KARTU ANGGOTA (index) ====== */
+.anggota-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.kartu {
+    background-color: white;
+    border: 2px solid #3a86ff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.2s;
+}
+
+.kartu:hover {
+    background-color: #dce9ff;
+}
+
+.kartu img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #3a86ff;
+    object-fit: cover;
+    background-color: #ccc;
+}
+
+.kartu .nama {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #2667cc;
+}
+
+.kartu .nim {
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+}
+
+.kartu .ringkasan {
+    font-size: 12px;
+    color: #444;
+    margin-top: 8px;
+    text-align: left;
+}
+
+/* ====== HALAMAN DETAIL ANGGOTA ====== */
+.profil-box {
+    background-color: white;
+    border: 2px solid #3a86ff;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.profil-foto {
+    text-align: center;
+}
+
+.profil-foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #3a86ff;
+    object-fit: cover;
+    background-color: #ccc;
+}
+
+.profil-foto .nama-besar {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2667cc;
+    margin-top: 10px;
+}
+
+.profil-info table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.profil-info table td {
+    padding: 7px 12px;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.profil-info table td:first-child {
+    font-weight: bold;
+    color: #2667cc;
+    white-space: nowrap;
+    width: 130px;
+}
+
+.profil-info table tr:nth-child(even) {
+    background-color: #f0f4ff;
+}
+
+.profil-info table tr:hover {
+    background-color: #dce9ff;
+}
+
+/* skill badges */
+.badge {
+    display: inline-block;
+    background-color: #3a86ff;
+    color: white;
+    border-radius: 12px;
+    padding: 3px 10px;
+    font-size: 12px;
+    margin: 2px;
+}
+
+/* tombol kembali */
+.btn-kembali {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #3a86ff;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-kembali:hover {
+    background-color: #2667cc;
+}
+
+/* ====== CRUD ====== */
+.crud-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* form tambah */
+.form-box {
+    background-color: white;
+    border: 2px solid #3a86ff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.form-box h3 {
+    color: #2667cc;
+    margin-top: 0;
+    border-bottom: 1px solid #3a86ff;
+    padding-bottom: 8px;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 140px 10px auto;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    padding: 6px 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3a86ff;
+    outline: none;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    align-items: center;
+}
+
+/* tombol */
+.btn-tambah {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 9px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.btn-tambah:hover { background-color: #1e7e34; }
+
+.btn-edit {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-hapus {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: 4px;
+}
+
+.btn-edit:hover { background-color: #e0a800; }
+.btn-hapus:hover { background-color: #b02a37; }
+
+/* tabel data */
+.tabel-box {
+    background-color: white;
+    border: 2px solid #3a86ff;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.tabel-box h3 {
+    color: #2667cc;
+    margin-top: 0;
+    border-bottom: 1px solid #3a86ff;
+    padding-bottom: 8px;
+}
+
+.tabel-data {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tabel-data th {
+    background-color: #3a86ff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabel-data td {
+    padding: 9px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabel-data tr:nth-child(even) {
+    background-color: #f0f4ff;
+}
+
+.tabel-data tr:hover {
+    background-color: #dce9ff;
+}
+
+/* pesan error */
+.error-msg {
+    color: red;
+    font-size: 12px;
+    margin-top: 3px;
+    display: none;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+    background-color: #2667cc;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 13px;
+}
